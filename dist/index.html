@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevStore | Tu Ecosistema Tecnológico Integral (Hardware, Software y Cursos)</title>
+  <meta name="description" content="DevStore es el marketplace especializado en tecnología que unifica la compra de hardware, herramientas digitales y cursos de programación en una única plataforma accesible y optimizada." />
+  <meta name="keywords" content="DevStore, marketplace tecnologia, hardware programadores, arduino, raspberry pi, cursos programacion, software dev" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300F0FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <script type="module" crossorigin src="/assets/index-HUUmtKq2.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DcOXpJeE.css">
+</head>
+<body class="bg-dev-bg text-dev-text font-sans antialiased selection:bg-dev-cyan selection:text-dev-bg">
+
+  <!-- Background decorative glows & grid -->
+  <div class="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none -z-20"></div>
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-radial-glow pointer-events-none -z-10"></div>
+  <div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-radial-glow-bottom pointer-events-none -z-10"></div>
+
+  <!-- ========================================== -->
+  <!-- 1. NAVBAR FLOTANTE / STICKY -->
+  <!-- ========================================== -->
+  <header class="sticky top-4 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <nav class="glass-panel rounded-2xl px-4 py-3 sm:px-6 sm:py-3.5 flex items-center justify-between shadow-glass transition-all duration-300">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="DevStore Inicio">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-dev-violet to-dev-cyan p-[1.5px] transition-transform duration-300 group-hover:scale-105 shadow-glow-cyan-sm">
+          <div class="w-full h-full bg-dev-bg rounded-[10px] flex items-center justify-center">
+            <i data-lucide="layers" class="w-5 h-5 text-dev-cyan"></i>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl font-bold tracking-tight text-white group-hover:text-dev-cyan transition-colors">DevStore</span>
+            <span class="px-1.5 py-0.5 text-[10px] font-mono font-semibold bg-dev-violet/20 border border-dev-violet/40 text-dev-violet rounded-md">GT1</span>
+          </div>
+          <span class="text-[10px] font-mono text-dev-muted tracking-wider hidden sm:block">TRIMODAL TECH HUB</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-1 text-sm font-medium text-dev-muted">
+        <a href="#catalogo" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Catálogo</a>
+        <a href="#metricas" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Métricas</a>
+        <a href="#solucion" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Solución</a>
+        <a href="#caracteristicas" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Características</a>
+        <a href="#como-funciona" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Cómo Funciona</a>
+        <a href="#testimonios" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Testimonios</a>
+        <a href="#faq" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">FAQ</a>
+        <a href="#equipo" class="px-3.5 py-2 rounded-lg hover:text-white hover:bg-white/5 transition-colors">Equipo</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Interactive Cart Trigger Preview -->
+        <button id="cart-preview-btn" class="relative p-2.5 rounded-xl text-dev-muted hover:text-dev-cyan hover:bg-white/5 border border-transparent hover:border-dev-border transition-all" aria-label="Carrito de compras (3 productos)">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-dev-cyan text-dev-bg text-[10px] font-mono font-bold flex items-center justify-center animate-pulse">3</span>
+        </button>
+
+        <!-- CTA Principal -->
+        <button id="nav-cta-btn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold bg-dev-cyan text-dev-bg hover:bg-[#38F9D7] hover:shadow-glow-cyan transition-all duration-300 font-mono">
+          <span>Explorar Marketplace</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded-xl text-dev-muted hover:text-white hover:bg-white/5 border border-dev-border transition-colors" aria-label="Abrir menú" aria-expanded="false">
+          <i data-lucide="menu" id="menu-icon-open" class="w-5 h-5"></i>
+          <i data-lucide="x" id="menu-icon-close" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-drawer" class="hidden lg:hidden mt-2 glass-panel rounded-2xl p-4 border border-dev-border shadow-2xl transition-all duration-300">
+      <div class="flex flex-col gap-1.5 text-sm font-medium">
+        <a href="#catalogo" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Catálogo Trimodal</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#metricas" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Métricas y Validación</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#solucion" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Problema vs Solución</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#caracteristicas" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Características</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#como-funciona" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Cómo Funciona</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#testimonios" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Testimonios</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#faq" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Preguntas Frecuentes</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <a href="#equipo" class="mobile-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-dev-text flex items-center justify-between">
+          <span>Equipo GT1</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted"></i>
+        </a>
+        <div class="pt-3 mt-2 border-t border-dev-border/60">
+          <button id="mobile-cta-btn" class="w-full py-3 rounded-xl text-center text-sm font-semibold bg-dev-cyan text-dev-bg font-mono flex items-center justify-center gap-2 shadow-glow-cyan-sm">
+            <span>Comenzar Ahora</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. HERO SECTION -->
+  <!-- ========================================== -->
+  <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    
+    <!-- Hero Main Copy -->
+    <div class="text-center max-w-4xl mx-auto space-y-6">
+      
+      <!-- Highlight Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-dev-cyan/10 via-dev-violet/10 to-transparent border border-dev-cyan/30 text-xs sm:text-sm font-mono text-dev-cyan shadow-glow-cyan-sm transition-all hover:border-dev-cyan">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-dev-cyan opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-dev-cyan"></span>
+        </span>
+        <span>🚀 Versión 1.0 disponible • Marketplace Especializado GT1</span>
+      </div>
+
+      <!-- H1 Headline with Text Gradient -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
+        Tu ecosistema tecnológico integral:
+        <span class="block mt-2 text-gradient-cyan">Hardware, Software y Cursos</span>
+        <span class="text-white">en un solo lugar.</span>
+      </h1>
+
+      <!-- UVP Subtitle -->
+      <p class="text-lg sm:text-xl text-dev-muted max-w-3xl mx-auto leading-relaxed font-normal">
+        DevStore es el marketplace <span class="text-white font-medium">All-in-One</span> especializado en tecnología que unifica la compra de componentes físicos, herramientas digitales y formación técnica en una única plataforma accesible y optimizada.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <button id="hero-cta-main" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-semibold bg-dev-cyan text-dev-bg hover:bg-[#38F9D7] hover:shadow-glow-cyan transition-all duration-300 font-mono group">
+          <span>Explorar Marketplace</span>
+          <i data-lucide="zap" class="w-5 h-5 group-hover:scale-110 transition-transform text-dev-bg"></i>
+        </button>
+
+        <a href="#catalogo" id="hero-cta-secondary" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-semibold bg-dev-surface/90 hover:bg-dev-surfaceHover text-dev-text border border-dev-border hover:border-dev-cyan/50 hover:shadow-glow-cyan-sm transition-all duration-300 font-mono">
+          <i data-lucide="terminal" class="w-5 h-5 text-dev-cyan"></i>
+          <span>Ver Demo Interactiva</span>
+        </a>
+      </div>
+
+      <!-- Quick Social Proof Tags -->
+      <div class="flex flex-wrap items-center justify-center gap-6 pt-6 text-xs font-mono text-dev-muted">
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-dev-cyan"></i>
+          <span>Checkout Trimodal Único</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-dev-violet"></i>
+          <span>Filtro por Lenguajes & Stack</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-dev-emerald"></i>
+          <span>Entrega y Acceso Inmediato</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE PLATFORM MOCKUP (IDE / STORE STYLE) -->
+    <!-- ========================================== -->
+    <div id="catalogo" class="mt-14 sm:mt-20 relative max-w-5xl mx-auto">
+      
+      <!-- Outer Glow Frame -->
+      <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-dev-cyan/30 via-dev-violet/30 to-dev-cyan/20 blur-xl opacity-50 -z-10"></div>
+      
+      <!-- Mockup Window -->
+      <div class="glass-panel rounded-2xl border border-dev-border/80 shadow-2xl overflow-hidden">
+        
+        <!-- Window Top Bar (macOS Style) -->
+        <div class="bg-dev-card/90 px-4 py-3 border-b border-dev-border flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block"></span>
+            <span class="ml-2 text-xs font-mono text-dev-muted hidden sm:inline-block">devstore://terminal.trimodal-catalog</span>
+          </div>
+
+          <!-- Interactive Catalog Category Tabs -->
+          <div class="flex items-center p-1 rounded-xl bg-dev-bg/80 border border-dev-border text-xs font-mono">
+            <button class="catalog-tab-btn active px-3 py-1.5 rounded-lg transition-all text-dev-cyan bg-dev-surface border border-dev-cyan/30" data-category="all">
+              Todo el Ecosistema
+            </button>
+            <button class="catalog-tab-btn px-3 py-1.5 rounded-lg transition-all text-dev-muted hover:text-white" data-category="hardware">
+              🛠️ Hardware
+            </button>
+            <button class="catalog-tab-btn px-3 py-1.5 rounded-lg transition-all text-dev-muted hover:text-white" data-category="software">
+              💻 Software
+            </button>
+            <button class="catalog-tab-btn px-3 py-1.5 rounded-lg transition-all text-dev-muted hover:text-white" data-category="cursos">
+              🎓 Cursos
+            </button>
+          </div>
+
+          <!-- Live Search Bar Simulation -->
+          <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-lg bg-dev-bg border border-dev-border/70 text-xs text-dev-muted font-mono">
+            <i data-lucide="search" class="w-3.5 h-3.5 text-dev-cyan"></i>
+            <span>filtrar: stack:rust arduino:uno</span>
+          </div>
+        </div>
+
+        <!-- Window Body: Catalog Grid & Unified Cart Drawer Preview -->
+        <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-6 bg-dev-bg/60">
+          
+          <!-- Products Area (2 cols on large screen) -->
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono text-dev-muted">
+              <span>EXPLORADOR TRIMODAL EN TIEMPO REAL</span>
+              <span class="text-dev-cyan flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-dev-cyan animate-pulse"></span>
+                <span>Filtro Inteligente Activo</span>
+              </span>
+            </div>
+
+            <!-- Dynamic Product Cards Container -->
+            <div id="mockup-products-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- Item 1: Hardware -->
+              <div class="product-item glass-card rounded-xl p-4 flex flex-col justify-between" data-type="hardware">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-dev-cyan/10 text-dev-cyan border border-dev-cyan/20">HARDWARE FÍSICO</span>
+                    <span class="text-xs font-mono text-dev-muted">Stock: 14 uds</span>
+                  </div>
+                  <h4 class="font-semibold text-white text-sm">Arduino Uno R4 WiFi + Starter Kit Sensores</h4>
+                  <p class="text-xs text-dev-muted mt-1">Microcontrolador Renesas RA4M1 con ESP32-S3 y matriz LED para IoT y robótica.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-dev-border/60 flex items-center justify-between">
+                  <span class="text-base font-bold font-mono text-white">$48.90</span>
+                  <button class="add-to-cart-trigger px-2.5 py-1.5 rounded-lg bg-dev-surfaceHover text-dev-cyan hover:bg-dev-cyan hover:text-dev-bg text-xs font-mono font-medium transition-colors flex items-center gap-1">
+                    <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 2: Software -->
+              <div class="product-item glass-card rounded-xl p-4 flex flex-col justify-between" data-type="software">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-dev-violet/20 text-dev-violet border border-dev-violet/30">HERRAMIENTA DIGITAL</span>
+                    <span class="text-xs font-mono text-dev-emerald">Entrega Inmediata</span>
+                  </div>
+                  <h4 class="font-semibold text-white text-sm">DevAI Assistant Suite Pro (Licencia Anual)</h4>
+                  <p class="text-xs text-dev-muted mt-1">Autocompletado de código local, refactorización con LLMs y soporte offline.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-dev-border/60 flex items-center justify-between">
+                  <span class="text-base font-bold font-mono text-white">$39.99</span>
+                  <button class="add-to-cart-trigger px-2.5 py-1.5 rounded-lg bg-dev-surfaceHover text-dev-cyan hover:bg-dev-cyan hover:text-dev-bg text-xs font-mono font-medium transition-colors flex items-center gap-1">
+                    <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 3: Cursos -->
+              <div class="product-item glass-card rounded-xl p-4 flex flex-col justify-between" data-type="cursos">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-dev-emerald/10 text-dev-emerald border border-dev-emerald/20">CURSO TÉCNICO</span>
+                    <span class="text-xs font-mono text-amber-400">★ 4.9 (320)</span>
+                  </div>
+                  <h4 class="font-semibold text-white text-sm">Arquitectura de Microservicios con Go & Rust</h4>
+                  <p class="text-xs text-dev-muted mt-1">Impartido por Dra. Sofía R. Incluye proyectos en vivo, repositorios y certificación.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-dev-border/60 flex items-center justify-between">
+                  <span class="text-base font-bold font-mono text-white">$59.00</span>
+                  <button class="add-to-cart-trigger px-2.5 py-1.5 rounded-lg bg-dev-surfaceHover text-dev-cyan hover:bg-dev-cyan hover:text-dev-bg text-xs font-mono font-medium transition-colors flex items-center gap-1">
+                    <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 4: Hardware Maker -->
+              <div class="product-item glass-card rounded-xl p-4 flex flex-col justify-between" data-type="hardware">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-dev-cyan/10 text-dev-cyan border border-dev-cyan/20">HARDWARE FÍSICO</span>
+                    <span class="text-xs font-mono text-dev-muted">Stock: 8 uds</span>
+                  </div>
+                  <h4 class="font-semibold text-white text-sm">Raspberry Pi 5 8GB Starter Pack</h4>
+                  <p class="text-xs text-dev-muted mt-1">Con case de disipación activa, tarjeta microSD 128GB y adaptador oficial 27W.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-dev-border/60 flex items-center justify-between">
+                  <span class="text-base font-bold font-mono text-white">$105.00</span>
+                  <button class="add-to-cart-trigger px-2.5 py-1.5 rounded-lg bg-dev-surfaceHover text-dev-cyan hover:bg-dev-cyan hover:text-dev-bg text-xs font-mono font-medium transition-colors flex items-center gap-1">
+                    <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                    <span>Añadir</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unified Trimodal Cart Preview Column -->
+          <div class="glass-card rounded-xl p-5 border border-dev-cyan/30 flex flex-col justify-between bg-dev-surface/90">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-dev-border">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="shopping-cart" class="w-4 h-4 text-dev-cyan"></i>
+                  <span class="text-xs font-bold uppercase tracking-wider font-mono text-white">Carrito Trimodal</span>
+                </div>
+                <span class="px-2 py-0.5 text-[10px] font-mono bg-dev-cyan/15 text-dev-cyan rounded-full font-bold">1 Flujo Único</span>
+              </div>
+
+              <!-- Cart Items List Simulation -->
+              <div class="mt-4 space-y-3">
+                <div class="p-2.5 rounded-lg bg-dev-bg/80 border border-dev-border flex items-center justify-between gap-3 text-xs">
+                  <div class="flex items-center gap-2 truncate">
+                    <span class="w-2 h-2 rounded-full bg-dev-cyan"></span>
+                    <span class="truncate text-white font-medium">Arduino Uno R4 Kit</span>
+                  </div>
+                  <span class="font-mono text-dev-cyan shrink-0">$48.90</span>
+                </div>
+
+                <div class="p-2.5 rounded-lg bg-dev-bg/80 border border-dev-border flex items-center justify-between gap-3 text-xs">
+                  <div class="flex items-center gap-2 truncate">
+                    <span class="w-2 h-2 rounded-full bg-dev-violet"></span>
+                    <span class="truncate text-white font-medium">DevAI Suite (Licencia)</span>
+                  </div>
+                  <span class="font-mono text-dev-violet shrink-0">$39.99</span>
+                </div>
+
+                <div class="p-2.5 rounded-lg bg-dev-bg/80 border border-dev-border flex items-center justify-between gap-3 text-xs">
+                  <div class="flex items-center gap-2 truncate">
+                    <span class="w-2 h-2 rounded-full bg-dev-emerald"></span>
+                    <span class="truncate text-white font-medium">Curso Microservicios Rust</span>
+                  </div>
+                  <span class="font-mono text-dev-emerald shrink-0">$59.00</span>
+                </div>
+              </div>
+
+              <!-- Summary -->
+              <div class="mt-4 p-3 rounded-lg bg-dev-bg/40 border border-dev-border/60 text-xs space-y-1.5 font-mono">
+                <div class="flex justify-between text-dev-muted">
+                  <span>Envío Físico (Rastreado):</span>
+                  <span class="text-white">Gratis</span>
+                </div>
+                <div class="flex justify-between text-dev-muted">
+                  <span>Acceso Digital & Licencias:</span>
+                  <span class="text-dev-emerald">Inmediato</span>
+                </div>
+                <div class="pt-2 border-t border-dev-border/60 flex justify-between text-sm font-bold text-white">
+                  <span>Total Unificado:</span>
+                  <span class="text-dev-cyan">$147.89</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="mt-5">
+              <button id="mockup-checkout-btn" class="w-full py-3 rounded-xl bg-gradient-to-r from-dev-cyan to-[#38F9D7] text-dev-bg font-bold font-mono text-xs uppercase tracking-wider hover:shadow-glow-cyan transition-all flex items-center justify-center gap-2">
+                <span>Pagar Orden Trimodal</span>
+                <i data-lucide="shield-check" class="w-4 h-4 text-dev-bg"></i>
+              </button>
+              <p class="text-[10px] text-center text-dev-muted mt-2 font-mono">Transacción cifrada • Creado por Grupo GT1</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. MÉTRICAS Y VALIDACIÓN (CINTA DE IMPACTO) -->
+  <!-- ========================================== -->
+  <section id="metricas" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative border-y border-dev-border/50 bg-dev-card/30">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+      
+      <!-- Métrica 1 -->
+      <div class="text-center space-y-2 p-4 rounded-2xl bg-dev-surface/40 border border-dev-border/50 hover:border-dev-cyan/40 transition-colors">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-gradient-cyan">-60%</div>
+        <p class="text-xs sm:text-sm text-dev-muted font-medium">Tiempo invertido en búsqueda de insumos tech y formación</p>
+      </div>
+
+      <!-- Métrica 2 -->
+      <div class="text-center space-y-2 p-4 rounded-2xl bg-dev-surface/40 border border-dev-border/50 hover:border-dev-violet/40 transition-colors">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-gradient-violet">+1,000</div>
+        <p class="text-xs sm:text-sm text-dev-muted font-medium">Productos físicos, licencias y cursos en la fase inicial</p>
+      </div>
+
+      <!-- Métrica 3 -->
+      <div class="text-center space-y-2 p-4 rounded-2xl bg-dev-surface/40 border border-dev-border/50 hover:border-dev-cyan/40 transition-colors">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-dev-emerald">95%</div>
+        <p class="text-xs sm:text-sm text-dev-muted font-medium">Satisfacción proyectada por categorización de nicho técnico</p>
+      </div>
+
+      <!-- Métrica 4 -->
+      <div class="text-center space-y-2 p-4 rounded-2xl bg-dev-surface/40 border border-dev-border/50 hover:border-dev-violet/40 transition-colors">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-mono text-white">+50</div>
+        <p class="text-xs sm:text-sm text-dev-muted font-medium">Vendedores tech e instructores activos en el ecosistema</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. PROBLEMA VS. SOLUCIÓN -->
+  <!-- ========================================== -->
+  <section id="solucion" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-mono text-dev-cyan bg-dev-cyan/10 border border-dev-cyan/20">DIAGNÓSTICO DEL SECTOR</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        ¿Por qué el flujo actual de compra tech está roto?
+      </h2>
+      <p class="text-dev-muted text-base sm:text-lg">
+        Desarrolladores, estudiantes y creadores pierden tiempo navegando entre 4 plataformas distintas. DevStore resuelve la dispersión de raíz.
+      </p>
+    </div>
+
+    <!-- Comparativa 2 Columnas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- Estado Actual / Problema -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-red-500/20 bg-red-950/10 flex flex-col justify-between">
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400">
+              <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">El Problema: Modelo Fragmentado</h3>
+              <p class="text-xs font-mono text-red-400">Sin DevStore • Dispersión y fricción</p>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-dev-muted">
+            <li class="flex items-start gap-3">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Experiencia de compra fragmentada</strong>
+                Obligados a navegar en tiendas distintas para adquirir componentes físicos (Arduino/Raspberry), licencias de software y formación técnica.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Marketplaces generalistas sin criterio técnico</strong>
+                Carencia de filtros orientados a la programación: incompatibilidades de pines, versiones de firmware, frameworks o lenguajes de código.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Falta de canal para creadores & instructores tech</strong>
+                Los instructores compiten con productos de consumo masivo sin una audiencia calificada de desarrolladores.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-red-500/20 flex items-center justify-between text-xs font-mono text-red-400">
+          <span>Resultado: Fricción, pérdida de horas y pedidos duplicados</span>
+        </div>
+      </div>
+
+      <!-- Con DevStore / Solución -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-dev-cyan/40 bg-gradient-to-b from-dev-surface/90 to-dev-card/90 flex flex-col justify-between shadow-glow-cyan-sm">
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-dev-cyan/15 border border-dev-cyan/40 flex items-center justify-center text-dev-cyan">
+              <i data-lucide="check-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">La Solución: DevStore All-in-One</h3>
+              <p class="text-xs font-mono text-dev-cyan">Ecosistema Trimodal Unificado</p>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-sm text-dev-muted">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-dev-cyan shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Catálogo Trimodal Unificado</strong>
+                Adquiere componentes físicos de robótica, licencias de desarrollo y cursos prácticos en un único carrito y una sola transacción.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-dev-cyan shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Navegación & Filtrado Inteligente por Stack</strong>
+                Clasificación avanzada por área técnica, lenguaje (Python, Java, Rust, React), compatibilidad de microcontroladores y nivel académico.
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check-circle" class="w-5 h-5 text-dev-cyan shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-white block">Arquitectura Multi-Rol Especializada</strong>
+                Paneles optimizados para Clientes (Devs/Estudiantes), Vendedores de Hardware, Instructores Creadores y Administradores.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-dev-cyan/20 flex items-center justify-between text-xs font-mono text-dev-cyan">
+          <span>Resultado: -60% en tiempo de setup y 100% comunidad tech</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. BENTO GRID DE CARACTERÍSTICAS (FEATURES) -->
+  <!-- ========================================== -->
+  <section id="caracteristicas" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-mono text-dev-violet bg-dev-violet/15 border border-dev-violet/30">FUNCIONALIDADES CLAVE</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        Diseñado para la comunidad developer
+      </h2>
+      <p class="text-dev-muted text-base sm:text-lg">
+        Cada funcionalidad fue concebida para eliminar la fricción entre la compra de insumos, el software y la formación continua.
+      </p>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Feature 1: Catálogo Trimodal (Span 2 col) -->
+      <div class="md:col-span-2 glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/50 transition-all group">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-dev-cyan/10 border border-dev-cyan/30 flex items-center justify-center text-dev-cyan mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="box" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-dev-cyan">01 / FEATURE BASE</span>
+          <h3 class="text-2xl font-bold text-white mt-1 mb-3">Catálogo Trimodal Especializado</h3>
+          <p class="text-dev-muted text-sm sm:text-base leading-relaxed max-w-xl">
+            Clasificación centralizada en hardware físico (Arduino, Raspberry Pi, teclados mecánicos ergonómicos), herramientas digitales (IDEs, licencias, asistentes IA) y cursos educativos de ingeniería de software.
+          </p>
+        </div>
+
+        <!-- Visual Chip Badges -->
+        <div class="mt-8 pt-6 border-t border-dev-border/60 flex flex-wrap gap-2 font-mono text-xs">
+          <span class="px-3 py-1 rounded-lg bg-dev-bg border border-dev-border text-dev-cyan">#HardwareMaker</span>
+          <span class="px-3 py-1 rounded-lg bg-dev-bg border border-dev-border text-dev-violet">#IDEs & Licencias</span>
+          <span class="px-3 py-1 rounded-lg bg-dev-bg border border-dev-border text-dev-emerald">#CursosRustPython</span>
+          <span class="px-3 py-1 rounded-lg bg-dev-bg border border-dev-border text-white">#Microcontroladores</span>
+        </div>
+      </div>
+
+      <!-- Feature 2: Carrito y Pedidos Unificados (Span 1 col) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/50 transition-all group">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-dev-violet/15 border border-dev-violet/30 flex items-center justify-center text-dev-violet mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-dev-violet">02 / EXPERIENCIA DE PAGO</span>
+          <h3 class="text-xl font-bold text-white mt-1 mb-3">Carrito y Pedidos Unificados</h3>
+          <p class="text-dev-muted text-sm leading-relaxed">
+            Gestión integrada para añadir hardware, software y cursos en un solo flujo de compra. Proceso de checkout ágil sin saltar de pasarela.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center justify-between text-xs font-mono text-dev-muted">
+          <span>Checkout 1-Click</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-dev-violet"></i>
+        </div>
+      </div>
+
+      <!-- Feature 3: Portal del Vendedor e Inventarios (Span 1 col) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/50 transition-all group">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-dev-emerald/10 border border-dev-emerald/20 flex items-center justify-center text-dev-emerald mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="store" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-dev-emerald">03 / GESTIÓN COMERCIAL</span>
+          <h3 class="text-xl font-bold text-white mt-1 mb-3">Portal del Vendedor & Inventarios</h3>
+          <p class="text-dev-muted text-sm leading-relaxed">
+            Panel para la publicación, edición y control de stock de productos físicos y seriales digitales con trazabilidad total.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center justify-between text-xs font-mono text-dev-muted">
+          <span>Control de Stock en Tiempo Real</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-dev-emerald"></i>
+        </div>
+      </div>
+
+      <!-- Feature 4: Hub de Cursos e Instructores (Span 1 col) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/50 transition-all group">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-amber-400">04 / FORMACIÓN CONTINUA</span>
+          <h3 class="text-xl font-bold text-white mt-1 mb-3">Hub de Cursos e Instructores</h3>
+          <p class="text-dev-muted text-sm leading-relaxed">
+            Módulo para estructurar cursos por niveles técnicos, repositorios de código vinculados y monetización directa del conocimiento.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center justify-between text-xs font-mono text-dev-muted">
+          <span>Monetización Directa</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-amber-400"></i>
+        </div>
+      </div>
+
+      <!-- Feature 5: Valoraciones y Reseñas Técnicas (Span 1 col) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/50 transition-all group">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-dev-cyan/10 border border-dev-cyan/20 flex items-center justify-center text-dev-cyan mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="star" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-dev-cyan">05 / COMUNIDAD & TRUST</span>
+          <h3 class="text-xl font-bold text-white mt-1 mb-3">Sistema de Reseñas Técnicas</h3>
+          <p class="text-dev-muted text-sm leading-relaxed">
+            Calificaciones transparentes con badges de compradores verificados, benchmark de componentes y opiniones entre pares programadores.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center justify-between text-xs font-mono text-dev-muted">
+          <span>Reseñas 100% Verificadas</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-dev-cyan"></i>
+        </div>
+      </div>
+
+      <!-- Feature 6: Panel de Control y Reportes (Span 3 col o full) -->
+      <div class="md:col-span-3 glass-card rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-dev-border hover:border-dev-cyan/50 transition-all">
+        <div class="space-y-3 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <i data-lucide="bar-chart-3" class="w-5 h-5 text-dev-cyan"></i>
+            <span class="text-xs font-mono text-dev-cyan">06 / CONTROL ADMINISTRATIVO</span>
+          </div>
+          <h3 class="text-2xl font-bold text-white">Panel de Control y Reportes Avanzados</h3>
+          <p class="text-dev-muted text-sm sm:text-base leading-relaxed">
+            Herramienta administrativa para gestión de usuarios, moderación de catálogo, seguridad de pagos y analíticas de conversión multi-rol en tiempo real.
+          </p>
+        </div>
+        <div class="flex items-center gap-4 shrink-0 font-mono text-xs">
+          <div class="p-4 rounded-xl bg-dev-bg border border-dev-border text-center">
+            <div class="text-lg font-bold text-white">99.9%</div>
+            <div class="text-dev-muted text-[10px]">Uptime API</div>
+          </div>
+          <div class="p-4 rounded-xl bg-dev-bg border border-dev-border text-center">
+            <div class="text-lg font-bold text-dev-cyan">Audit Ready</div>
+            <div class="text-dev-muted text-[10px]">Trazabilidad</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. CÓMO FUNCIONA (PASOS 1, 2, 3) -->
+  <!-- ========================================== -->
+  <section id="como-funciona" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-mono text-dev-cyan bg-dev-cyan/10 border border-dev-cyan/20">FLUJO SECUENCIAL</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        Cómo funciona DevStore en 3 simples pasos
+      </h2>
+      <p class="text-dev-muted text-base sm:text-lg">
+        Desde la selección por tecnología hasta la recepción y activación inmediata en tu entorno de desarrollo.
+      </p>
+    </div>
+
+    <!-- 3 Steps Grid with Connecting Line Concept -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+      
+      <!-- Step 1 -->
+      <div class="glass-card rounded-2xl p-8 border border-dev-border relative group hover:border-dev-cyan transition-all">
+        <div class="w-14 h-14 rounded-2xl bg-dev-bg border border-dev-cyan/40 text-dev-cyan font-mono font-bold text-xl flex items-center justify-center mb-6 shadow-glow-cyan-sm group-hover:scale-105 transition-transform">
+          01
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Explora y Filtra por Stack Técnico</h3>
+        <p class="text-dev-muted text-sm leading-relaxed">
+          Navega por lenguaje de programación (Python, Rust, React), especificación de hardware (Arduino, Raspberry Pi) o herramientas de productividad.
+        </p>
+        <div class="mt-6 flex items-center gap-2 text-xs font-mono text-dev-cyan">
+          <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+          <span>Filtros técnicos de nicho</span>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="glass-card rounded-2xl p-8 border border-dev-border relative group hover:border-dev-violet transition-all">
+        <div class="w-14 h-14 rounded-2xl bg-dev-bg border border-dev-violet/40 text-dev-violet font-mono font-bold text-xl flex items-center justify-center mb-6 shadow-glow-violet-sm group-hover:scale-105 transition-transform">
+          02
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Carrito Trimodal Unificado</h3>
+        <p class="text-dev-muted text-sm leading-relaxed">
+          Combina una placa electrónica, una licencia de tu IDE preferido y un curso especializado en un solo checkout sin realizar múltiples pagos.
+        </p>
+        <div class="mt-6 flex items-center gap-2 text-xs font-mono text-dev-violet">
+          <i data-lucide="package-check" class="w-4 h-4"></i>
+          <span>1 Solo Flujo de Facturación</span>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="glass-card rounded-2xl p-8 border border-dev-border relative group hover:border-dev-emerald transition-all">
+        <div class="w-14 h-14 rounded-2xl bg-dev-bg border border-dev-emerald/40 text-dev-emerald font-mono font-bold text-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+          03
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Entrega Inmediata y Setup Listo</h3>
+        <p class="text-dev-muted text-sm leading-relaxed">
+          Tus credenciales de software y acceso a los cursos se habilitan de inmediato en tu perfil. El hardware físico se despacha con seguimiento satelital.
+        </p>
+        <div class="mt-6 flex items-center gap-2 text-xs font-mono text-dev-emerald">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+          <span>Activación digital en 0s</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. TESTIMONIOS -->
+  <!-- ========================================== -->
+  <section id="testimonios" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-mono text-dev-emerald bg-dev-emerald/10 border border-dev-emerald/20">CASOS DE USO REALES</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        Validado por la comunidad tecnológica
+      </h2>
+      <p class="text-dev-muted text-base sm:text-lg">
+        Clientes, creadores y vendedores comparten su experiencia con el ecosistema DevStore.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Testimonio 1: Carlos M. -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/40 transition-all">
+        <div class="space-y-4">
+          <!-- Stars -->
+          <div class="flex items-center gap-1 text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-dev-text text-sm sm:text-base leading-relaxed italic">
+            "Antes compraba mi teclado mecánico en una tienda, el software en otra y mis cursos en plataformas dispersas. Con DevStore armé mi setup y compré mi curso de Rust en la misma transacción."
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-dev-cyan/20 border border-dev-cyan/40 text-dev-cyan font-bold font-mono flex items-center justify-center text-sm">
+            CM
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Carlos M.</h4>
+            <p class="text-xs text-dev-muted font-mono">Desarrollador Full-Stack • Cliente</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 2: Dra. Sofía R. -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-violet/40 transition-all">
+        <div class="space-y-4">
+          <!-- Stars -->
+          <div class="flex items-center gap-1 text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-dev-text text-sm sm:text-base leading-relaxed italic">
+            "Publicar mi curso en DevStore me permitió conectar directamente con estudiantes realmente interesados en programación, sin perder tiempo en marketplaces genéricos."
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-dev-violet/20 border border-dev-violet/40 text-dev-violet font-bold font-mono flex items-center justify-center text-sm">
+            SR
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Dra. Sofía R.</h4>
+            <p class="text-xs text-dev-muted font-mono">Instructora en IA & Python • Creadora</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 3: Marco V. -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between border border-dev-border hover:border-dev-cyan/40 transition-all">
+        <div class="space-y-4">
+          <!-- Stars -->
+          <div class="flex items-center gap-1 text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-dev-text text-sm sm:text-base leading-relaxed italic">
+            "Administrar mi stock de placas Arduino y Kits Raspberry Pi ahora es simple, y mis ventas aumentaron al llegar exactamente a quienes necesitan componentes de robótica."
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-dev-emerald/20 border border-dev-emerald/40 text-dev-emerald font-bold font-mono flex items-center justify-center text-sm">
+            MV
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Marco V.</h4>
+            <p class="text-xs text-dev-muted font-mono">Proveedor de Hardware • Vendedor</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. PREGUNTAS FRECUENTES (FAQ ACORDEÓN EN JS) -->
+  <!-- ========================================== -->
+  <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-mono text-dev-cyan bg-dev-cyan/10 border border-dev-cyan/20">RESOLUCIÓN DE DUDAS</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-dev-muted text-base sm:text-lg">
+        Todo lo que necesitas saber sobre el funcionamiento de DevStore y sus roles.
+      </p>
+    </div>
+
+    <!-- Accordion Wrapper -->
+    <div class="space-y-4" id="faq-accordion-container">
+      
+      <!-- FAQ Item 1 -->
+      <div class="faq-item glass-card rounded-2xl border border-dev-border overflow-hidden transition-all duration-300">
+        <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+          <span class="text-base sm:text-lg font-semibold text-white">¿Qué variedad de productos puedo adquirir en DevStore?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-dev-cyan shrink-0 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-dev-muted leading-relaxed border-t border-dev-border/40 pt-4">
+          En DevStore encuentras <strong>hardware especializado</strong> (teclados mecánicos, componentes y kits Arduino, placas Raspberry Pi, accesorios ergonómicos), <strong>productos y licencias digitales</strong> (IDEs de desarrollo, herramientas de productividad con IA) y <strong>cursos técnicos certificados</strong> en lenguajes como Python, Java, Rust, C++ y especializaciones en desarrollo web o ciberseguridad.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item glass-card rounded-2xl border border-dev-border overflow-hidden transition-all duration-300">
+        <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+          <span class="text-base sm:text-lg font-semibold text-white">¿Cómo puedo vender mi hardware o licencias de software en la plataforma?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-dev-cyan shrink-0 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-dev-muted leading-relaxed border-t border-dev-border/40 pt-4">
+          Puedes registrarte con perfil de <strong>Vendedor Tech</strong> para publicar tus productos físicos o digitales. El portal te permite definir precios, administrar inventarios con alertas de bajo stock y realizar seguimiento en tiempo real a tus pedidos y entregas hacia la comunidad de desarrolladores.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item glass-card rounded-2xl border border-dev-border overflow-hidden transition-all duration-300">
+        <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+          <span class="text-base sm:text-lg font-semibold text-white">¿Cuáles son los requisitos para publicar un curso como instructor?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-dev-cyan shrink-0 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-dev-muted leading-relaxed border-t border-dev-border/40 pt-4">
+          Como <strong>Instructor registrado</strong> podrás estructurar módulos de capacitación por niveles (básico, intermedio, avanzado), adjuntar repositorios de código, definir tus tarifas o cupones y recibir valoraciones directas de tus estudiantes, reteniendo el mayor margen de beneficio del sector.
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item glass-card rounded-2xl border border-dev-border overflow-hidden transition-all duration-300">
+        <button class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none" aria-expanded="false">
+          <span class="text-base sm:text-lg font-semibold text-white">¿Cómo se gestionan las entregas de productos digitales y cursos?</span>
+          <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-dev-cyan shrink-0 transition-transform duration-300"></i>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 text-sm text-dev-muted leading-relaxed border-t border-dev-border/40 pt-4">
+          Los productos digitales (licencias de software, tokens o claves de activación) y el acceso a los cursos se habilitan de <strong>manera electrónica inmediata (0 segundos)</strong> en tu panel de usuario una vez confirmado el pago en el carrito de compras unificado. El hardware físico incluye código de seguimiento satelital.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 9. EQUIPO DEL PROYECTO (GRUPO GT1) -->
+  <!-- ========================================== -->
+  <section id="equipo" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="px-3 py-1 rounded-full text-xs font-mono text-dev-violet bg-dev-violet/15 border border-dev-violet/30">TALENTO Y AUTORÍA</span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
+        Equipo de Desarrollo • Grupo GT1
+      </h2>
+      <p class="text-dev-muted text-base sm:text-lg">
+        Proyecto desarrollado con altos estándares de ingeniería y diseño de experiencia de usuario.
+      </p>
+    </div>
+
+    <!-- Developers Grid (3 Members) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Miembro 1: Aaron -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-dev-border hover:border-dev-cyan/50 transition-all flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dev-cyan to-blue-600 p-[2px] shadow-glow-cyan-sm">
+              <div class="w-full h-full bg-dev-bg rounded-[14px] flex items-center justify-center font-mono font-bold text-dev-cyan text-lg">
+                AA
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-dev-cyan/10 text-dev-cyan border border-dev-cyan/20">DEV CORE</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-dev-cyan transition-colors">Andrade Mallco Aaron</h3>
+          <p class="text-xs font-mono text-dev-muted mt-1">Desarrollador / Miembro del Equipo</p>
+          <p class="text-dev-muted text-sm mt-4 leading-relaxed">
+            Especializado en arquitectura de datos, lógica de backend y modelado del catálogo trimodal.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center gap-3">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-dev-bg border border-dev-border text-dev-muted hover:text-white hover:border-dev-cyan transition-colors" aria-label="GitHub de Aaron">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-dev-bg border border-dev-border text-dev-muted hover:text-white hover:border-dev-cyan transition-colors" aria-label="LinkedIn de Aaron">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <span class="text-[11px] font-mono text-dev-muted ml-auto">Grupo GT1</span>
+        </div>
+      </div>
+
+      <!-- Miembro 2: Omar -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-dev-cyan/30 shadow-glow-cyan-sm flex flex-col justify-between group bg-dev-surface/90">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dev-cyan via-dev-violet to-purple-600 p-[2px]">
+              <div class="w-full h-full bg-dev-bg rounded-[14px] flex items-center justify-center font-mono font-bold text-dev-cyan text-lg">
+                OL
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-dev-cyan/20 text-dev-cyan border border-dev-cyan/40 font-bold">DEV & UI/UX</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-dev-cyan transition-colors">Omar Claudio Lazaro Flores</h3>
+          <p class="text-xs font-mono text-dev-cyan mt-1">Desarrollador / Miembro del Equipo</p>
+          <p class="text-dev-muted text-sm mt-4 leading-relaxed">
+            Enfocado en la ingeniería Frontend, diseño de interfaz reactiva, integración visual e interactividad de la plataforma.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center gap-3">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-dev-bg border border-dev-border text-dev-cyan hover:text-white hover:border-dev-cyan transition-colors" aria-label="GitHub de Omar">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-dev-bg border border-dev-border text-dev-cyan hover:text-white hover:border-dev-cyan transition-colors" aria-label="LinkedIn de Omar">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <span class="text-[11px] font-mono text-dev-cyan ml-auto">Grupo GT1</span>
+        </div>
+      </div>
+
+      <!-- Miembro 3: Jairo -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-dev-border hover:border-dev-violet/50 transition-all flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-dev-violet to-pink-600 p-[2px] shadow-glow-violet-sm">
+              <div class="w-full h-full bg-dev-bg rounded-[14px] flex items-center justify-center font-mono font-bold text-dev-violet text-lg">
+                JA
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-dev-violet/10 text-dev-violet border border-dev-violet/20">DEV CORE</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-dev-violet transition-colors">Jairo Edwin Arizaga Garrado</h3>
+          <p class="text-xs font-mono text-dev-muted mt-1">Desarrollador / Miembro del Equipo</p>
+          <p class="text-dev-muted text-sm mt-4 leading-relaxed">
+            Especializado en seguridad del sistema, gestión multi-rol, validaciones y testing de la plataforma.
+          </p>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-dev-border/60 flex items-center gap-3">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-dev-bg border border-dev-border text-dev-muted hover:text-white hover:border-dev-violet transition-colors" aria-label="GitHub de Jairo">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-dev-bg border border-dev-border text-dev-muted hover:text-white hover:border-dev-violet transition-colors" aria-label="LinkedIn de Jairo">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <span class="text-[11px] font-mono text-dev-muted ml-auto">Grupo GT1</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Academic & Mentorship Banner -->
+    <div class="mt-12 glass-panel rounded-2xl p-6 sm:p-8 border border-dev-border/80 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-dev-card border border-dev-border flex items-center justify-center text-dev-cyan shrink-0">
+          <i data-lucide="award" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="text-xs font-mono text-dev-cyan">SUPERVISIÓN ACADÉMICA</div>
+          <h4 class="text-lg font-bold text-white">Docente: Ing. Duran</h4>
+          <p class="text-xs text-dev-muted mt-0.5">Grupo: GT1 • Carrera de Ingeniería en Ciencias de la Computación</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 font-mono text-xs text-dev-muted">
+        <span class="px-3 py-1.5 rounded-lg bg-dev-bg border border-dev-border">Facultad de Tecnología</span>
+        <span class="px-3 py-1.5 rounded-lg bg-dev-bg border border-dev-border text-dev-cyan">Chuquisaca — Bolivia</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- BANNER CTA FINAL -->
+  <!-- ========================================== -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="relative glass-card rounded-3xl p-8 sm:p-12 lg:p-16 border border-dev-cyan/40 overflow-hidden text-center shadow-glow-cyan">
+      
+      <!-- Ambient light inside banner -->
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-dev-cyan/20 blur-3xl rounded-full pointer-events-none -z-10"></div>
+      
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono text-dev-cyan bg-dev-cyan/10 border border-dev-cyan/30">
+          <span>⚡ ACCESO INMEDIATO AL ECOSISTEMA</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          ¿Listo para unificar tus compras y herramientas de programación?
+        </h2>
+
+        <p class="text-dev-muted text-base sm:text-lg max-w-2xl mx-auto">
+          Únete a DevStore como desarrollador, vendedor tech o instructor y forma parte del marketplace especializado del futuro.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <button id="final-cta-btn" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dev-cyan text-dev-bg font-bold font-mono text-base hover:bg-[#38F9D7] hover:shadow-glow-cyan transition-all flex items-center justify-center gap-2">
+            <span>Comenzar Ahora Gratis</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+          <button id="final-vendor-btn" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dev-bg hover:bg-dev-surfaceHover text-dev-text border border-dev-border hover:border-dev-violet font-mono text-base transition-all flex items-center justify-center gap-2">
+            <i data-lucide="user-plus" class="w-4 h-4 text-dev-violet"></i>
+            <span>Vender o Enseñar en DevStore</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 10. FOOTER COMPLETO -->
+  <!-- ========================================== -->
+  <footer class="mt-20 border-t border-dev-border/70 bg-dev-bg/90 pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-sm">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-dev-border/60">
+      
+      <!-- Brand & Mission Column (Span 2) -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-dev-violet to-dev-cyan p-[1.5px] shadow-glow-cyan-sm">
+            <div class="w-full h-full bg-dev-bg rounded-[10px] flex items-center justify-center">
+              <i data-lucide="layers" class="w-4 h-4 text-dev-cyan"></i>
+            </div>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-white">DevStore</span>
+          <span class="px-1.5 py-0.5 text-[10px] font-mono bg-dev-cyan/15 text-dev-cyan rounded border border-dev-cyan/30">GT1</span>
+        </div>
+
+        <p class="text-dev-muted text-xs sm:text-sm leading-relaxed max-w-sm">
+          Tu ecosistema tecnológico integral: Hardware, Software y Cursos en un solo lugar. Diseñado para simplificar el flujo de trabajo de la comunidad dev.
+        </p>
+
+        <!-- System Status Indicator -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-dev-card border border-dev-border text-xs font-mono text-dev-muted">
+          <span class="w-2 h-2 rounded-full bg-dev-emerald animate-pulse"></span>
+          <span>Sistemas Operativos • Producción</span>
+        </div>
+      </div>
+
+      <!-- Links Col 1: Ecosistema -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs font-bold text-white uppercase tracking-wider">Ecosistema</h4>
+        <ul class="space-y-2 text-xs text-dev-muted">
+          <li><a href="#catalogo" class="hover:text-dev-cyan transition-colors">Hardware Maker & Robótica</a></li>
+          <li><a href="#catalogo" class="hover:text-dev-cyan transition-colors">Licencias & Herramientas IA</a></li>
+          <li><a href="#catalogo" class="hover:text-dev-cyan transition-colors">Cursos Técnicos y Repos</a></li>
+          <li><a href="#solucion" class="hover:text-dev-cyan transition-colors">Carrito Trimodal Único</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Col 2: Comunidad & Roles -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs font-bold text-white uppercase tracking-wider">Roles & Paneles</h4>
+        <ul class="space-y-2 text-xs text-dev-muted">
+          <li><a href="#caracteristicas" class="hover:text-dev-cyan transition-colors">Portal para Estudiantes & Devs</a></li>
+          <li><a href="#caracteristicas" class="hover:text-dev-cyan transition-colors">Portal de Proveedores Hardware</a></li>
+          <li><a href="#caracteristicas" class="hover:text-dev-cyan transition-colors">Hub para Instructores Tech</a></li>
+          <li><a href="#caracteristicas" class="hover:text-dev-cyan transition-colors">Panel Administrativo GT1</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Col 3: Universidad & Contacto -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs font-bold text-white uppercase tracking-wider">Proyecto Académico</h4>
+        <ul class="space-y-2 text-xs text-dev-muted">
+          <li><span class="text-white">Grupo GT1</span></li>
+          <li><span>Docente: Ing. Duran</span></li>
+          <li><span>Ing. Ciencias de la Computación</span></li>
+          <li><span>Facultad de Tecnología</span></li>
+          <li><span>Chuquisaca - Bolivia</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-dev-muted font-mono">
+      <p>© 2026 DevStore (Grupo GT1). Todos los derechos reservados.</p>
+      
+      <div class="flex items-center gap-6">
+        <span class="text-dev-cyan">Vite + Tailwind CSS + Vanilla JS</span>
+        <a href="#hero" class="hover:text-white transition-colors flex items-center gap-1">
+          <span>Volver arriba</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- MODAL INTERACTIVO: REGISTRO / EXPLORAR DEMO -->
+  <!-- ========================================== -->
+  <div id="demo-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 transition-all">
+    <div class="glass-panel rounded-3xl p-6 sm:p-8 max-w-lg w-full border border-dev-cyan/40 shadow-2xl relative">
+      
+      <!-- Close button -->
+      <button id="close-modal-btn" class="absolute top-5 right-5 p-2 rounded-xl text-dev-muted hover:text-white hover:bg-white/5 transition-colors" aria-label="Cerrar modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-4">
+        <div class="w-12 h-12 rounded-xl bg-dev-cyan/15 border border-dev-cyan/40 text-dev-cyan flex items-center justify-center">
+          <i data-lucide="sparkles" class="w-6 h-6"></i>
+        </div>
+
+        <h3 class="text-2xl font-bold text-white">Bienvenido a DevStore</h3>
+        <p class="text-xs sm:text-sm text-dev-muted leading-relaxed">
+          Selecciona tu perfil de acceso para simular la experiencia adaptada del ecosistema:
+        </p>
+
+        <!-- Role Selector Buttons -->
+        <div class="grid grid-cols-1 gap-2.5 pt-2 font-mono text-xs">
+          <button class="role-select-btn p-3.5 rounded-xl bg-dev-bg border border-dev-border hover:border-dev-cyan hover:text-dev-cyan transition-all text-left flex items-center justify-between group" data-role="Estudiante / Desarrollador">
+            <div>
+              <div class="font-bold text-white group-hover:text-dev-cyan">💻 Estudiante / Desarrollador</div>
+              <div class="text-[11px] text-dev-muted">Comprar hardware, activar software y ver cursos</div>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted group-hover:text-dev-cyan"></i>
+          </button>
+
+          <button class="role-select-btn p-3.5 rounded-xl bg-dev-bg border border-dev-border hover:border-dev-violet hover:text-dev-violet transition-all text-left flex items-center justify-between group" data-role="Vendedor Tech">
+            <div>
+              <div class="font-bold text-white group-hover:text-dev-violet">🛠️ Vendedor de Hardware</div>
+              <div class="text-[11px] text-dev-muted">Publicar inventario de placas y sensores</div>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted group-hover:text-dev-violet"></i>
+          </button>
+
+          <button class="role-select-btn p-3.5 rounded-xl bg-dev-bg border border-dev-border hover:border-dev-emerald hover:text-dev-emerald transition-all text-left flex items-center justify-between group" data-role="Instructor Tech">
+            <div>
+              <div class="font-bold text-white group-hover:text-dev-emerald">🎓 Instructor Tech</div>
+              <div class="text-[11px] text-dev-muted">Publicar cursos y monetizar conocimiento</div>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-dev-muted group-hover:text-dev-emerald"></i>
+          </button>
+        </div>
+
+        <p class="text-[11px] text-center text-dev-muted pt-2 font-mono">
+          Demo interactiva desarrollada por Grupo GT1 • DevStore 2026
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <!-- ========================================== -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 p-3 rounded-xl bg-dev-card/90 border border-dev-border text-dev-cyan shadow-glass hover:bg-dev-cyan hover:text-dev-bg transition-all duration-300 opacity-0 pointer-events-none" aria-label="Volver arriba">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- ========================================== -->
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- ========================================== -->
+  <div id="toast-container" class="fixed bottom-6 left-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Main JavaScript App Entry -->
+</body>
+</html>
